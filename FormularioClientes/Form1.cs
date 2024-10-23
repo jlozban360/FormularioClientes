@@ -62,7 +62,6 @@ namespace FormularioClientes
             tipoClienteCol.Items.AddRange("A", "B", "C");
             dataGridView1.Columns.Add(tipoClienteCol);
 
-
             DataGridViewTextBoxColumn sumaTotalCol = new DataGridViewTextBoxColumn();
             sumaTotalCol.Name = "SumaTotal";
             sumaTotalCol.HeaderText = "SumaTotal";
@@ -113,7 +112,6 @@ namespace FormularioClientes
                 dgv.Rows.Add(fila);
             }
         }
-
         
         private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {

@@ -29,16 +29,14 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            textBoxNombre = new TextBox();
+            textBoxApellido1 = new TextBox();
             label2 = new Label();
-            textBox3 = new TextBox();
+            textBoxApellido2 = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            maskedTextBox1 = new MaskedTextBox();
             dateTimePicker1 = new DateTimePicker();
             label5 = new Label();
-            textBox4 = new TextBox();
             label6 = new Label();
             label7 = new Label();
             numericUpDown1 = new NumericUpDown();
@@ -53,6 +51,8 @@
             button2 = new Button();
             listBox1 = new ListBox();
             button3 = new Button();
+            textBoxDireccion = new TextBox();
+            maskedTextBox1 = new MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -67,23 +67,23 @@
             label1.TabIndex = 0;
             label1.Text = "Nombre:";
             // 
-            // textBox1
+            // textBoxNombre
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(141, 31);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(302, 29);
-            textBox1.TabIndex = 2;
+            textBoxNombre.BorderStyle = BorderStyle.FixedSingle;
+            textBoxNombre.Font = new Font("Segoe UI", 12F);
+            textBoxNombre.Location = new Point(141, 31);
+            textBoxNombre.Name = "textBoxNombre";
+            textBoxNombre.Size = new Size(302, 29);
+            textBoxNombre.TabIndex = 2;
             // 
-            // textBox2
+            // textBoxApellido1
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Segoe UI", 12F);
-            textBox2.Location = new Point(141, 66);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(302, 29);
-            textBox2.TabIndex = 4;
+            textBoxApellido1.BorderStyle = BorderStyle.FixedSingle;
+            textBoxApellido1.Font = new Font("Segoe UI", 12F);
+            textBoxApellido1.Location = new Point(141, 66);
+            textBoxApellido1.Name = "textBoxApellido1";
+            textBoxApellido1.Size = new Size(302, 29);
+            textBoxApellido1.TabIndex = 4;
             // 
             // label2
             // 
@@ -91,18 +91,18 @@
             label2.Font = new Font("Segoe UI", 12F);
             label2.Location = new Point(31, 68);
             label2.Name = "label2";
-            label2.Size = new Size(77, 21);
+            label2.Size = new Size(83, 21);
             label2.TabIndex = 3;
-            label2.Text = "Apellidos:";
+            label2.Text = "Apellido 1:";
             // 
-            // textBox3
+            // textBoxApellido2
             // 
-            textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Font = new Font("Segoe UI", 12F);
-            textBox3.Location = new Point(141, 101);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(302, 29);
-            textBox3.TabIndex = 6;
+            textBoxApellido2.BorderStyle = BorderStyle.FixedSingle;
+            textBoxApellido2.Font = new Font("Segoe UI", 12F);
+            textBoxApellido2.Location = new Point(141, 101);
+            textBoxApellido2.Name = "textBoxApellido2";
+            textBoxApellido2.Size = new Size(302, 29);
+            textBoxApellido2.TabIndex = 6;
             // 
             // label3
             // 
@@ -110,9 +110,9 @@
             label3.Font = new Font("Segoe UI", 12F);
             label3.Location = new Point(31, 103);
             label3.Name = "label3";
-            label3.Size = new Size(78, 21);
+            label3.Size = new Size(83, 21);
             label3.TabIndex = 5;
-            label3.Text = "Dirección:";
+            label3.Text = "Apellido 2:";
             // 
             // label4
             // 
@@ -120,19 +120,9 @@
             label4.Font = new Font("Segoe UI", 12F);
             label4.Location = new Point(31, 138);
             label4.Name = "label4";
-            label4.Size = new Size(71, 21);
+            label4.Size = new Size(78, 21);
             label4.TabIndex = 7;
-            label4.Text = "Teléfono:";
-            // 
-            // maskedTextBox1
-            // 
-            maskedTextBox1.BackColor = SystemColors.InactiveBorder;
-            maskedTextBox1.BorderStyle = BorderStyle.FixedSingle;
-            maskedTextBox1.Font = new Font("Segoe UI", 12F);
-            maskedTextBox1.Location = new Point(141, 138);
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(145, 29);
-            maskedTextBox1.TabIndex = 8;
+            label4.Text = "Dirección:";
             // 
             // dateTimePicker1
             // 
@@ -152,24 +142,15 @@
             label5.TabIndex = 10;
             label5.Text = "Fecha nacimiento:";
             // 
-            // textBox4
-            // 
-            textBox4.BorderStyle = BorderStyle.FixedSingle;
-            textBox4.Font = new Font("Segoe UI", 12F);
-            textBox4.Location = new Point(141, 173);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(302, 29);
-            textBox4.TabIndex = 12;
-            // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F);
             label6.Location = new Point(31, 175);
             label6.Name = "label6";
-            label6.Size = new Size(61, 21);
+            label6.Size = new Size(71, 21);
             label6.TabIndex = 11;
-            label6.Text = "E-Mail: ";
+            label6.Text = "Teléfono:";
             // 
             // label7
             // 
@@ -296,11 +277,33 @@
             button3.Text = "Limpiar formulario";
             button3.UseVisualStyleBackColor = true;
             // 
+            // textBoxDireccion
+            // 
+            textBoxDireccion.BorderStyle = BorderStyle.FixedSingle;
+            textBoxDireccion.Font = new Font("Segoe UI", 12F);
+            textBoxDireccion.Location = new Point(141, 136);
+            textBoxDireccion.Name = "textBoxDireccion";
+            textBoxDireccion.Size = new Size(302, 29);
+            textBoxDireccion.TabIndex = 24;
+            // 
+            // maskedTextBox1
+            // 
+            maskedTextBox1.BorderStyle = BorderStyle.FixedSingle;
+            maskedTextBox1.Font = new Font("Segoe UI", 12F);
+            maskedTextBox1.Location = new Point(141, 171);
+            maskedTextBox1.Mask = "999999999";
+            maskedTextBox1.Name = "maskedTextBox1";
+            maskedTextBox1.Size = new Size(161, 29);
+            maskedTextBox1.TabIndex = 25;
+            maskedTextBox1.ValidatingType = typeof(int);
+            // 
             // Clientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(485, 663);
+            Controls.Add(maskedTextBox1);
+            Controls.Add(textBoxDireccion);
             Controls.Add(button3);
             Controls.Add(listBox1);
             Controls.Add(button2);
@@ -312,17 +315,15 @@
             Controls.Add(label8);
             Controls.Add(numericUpDown1);
             Controls.Add(label7);
-            Controls.Add(textBox4);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(dateTimePicker1);
-            Controls.Add(maskedTextBox1);
             Controls.Add(label4);
-            Controls.Add(textBox3);
+            Controls.Add(textBoxApellido2);
             Controls.Add(label3);
-            Controls.Add(textBox2);
+            Controls.Add(textBoxApellido1);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxNombre);
             Controls.Add(label1);
             Name = "Clientes";
             Text = "Clientes";
@@ -336,16 +337,14 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox textBoxNombre;
+        private TextBox textBoxApellido1;
         private Label label2;
-        private TextBox textBox3;
+        private TextBox textBoxApellido2;
         private Label label3;
         private Label label4;
-        private MaskedTextBox maskedTextBox1;
         private DateTimePicker dateTimePicker1;
         private Label label5;
-        private TextBox textBox4;
         private Label label6;
         private Label label7;
         private NumericUpDown numericUpDown1;
@@ -360,5 +359,7 @@
         private Button button2;
         private ListBox listBox1;
         private Button button3;
+        private TextBox textBoxDireccion;
+        private MaskedTextBox maskedTextBox1;
     }
 }
