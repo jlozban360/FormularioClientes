@@ -12,7 +12,7 @@ namespace FormularioClientes
 {
     public partial class Clientes : Form
     {
-        public Clientes()
+        public Clientes(ref DataGridViewCellCollection fila)
         {
             InitializeComponent();
         }

@@ -62,6 +62,7 @@ namespace FormularioClientes
             tipoClienteCol.Items.AddRange("A", "B", "C");
             dataGridView1.Columns.Add(tipoClienteCol);
 
+
             DataGridViewTextBoxColumn sumaTotalCol = new DataGridViewTextBoxColumn();
             sumaTotalCol.Name = "SumaTotal";
             sumaTotalCol.HeaderText = "SumaTotal";
@@ -69,6 +70,18 @@ namespace FormularioClientes
             sumaTotalCol.DefaultCellStyle.Format = "N2";
             sumaTotalCol.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView1.Columns.Add(sumaTotalCol);
+
+            DataGridViewTextBoxColumn sexoCol = new DataGridViewTextBoxColumn();
+            sexoCol.Name = "TipoSexo";
+            sexoCol.HeaderText = "Genero";
+            sexoCol.ValueType = typeof(string);
+            dataGridView1.Columns.Add(sexoCol);
+
+            DataGridViewTextBoxColumn activoCol = new DataGridViewTextBoxColumn();
+            activoCol.Name = "TipoActivo";
+            activoCol.HeaderText = "Activo";
+            activoCol.ValueType = typeof(string);
+            dataGridView1.Columns.Add(activoCol);
 
             Estilos estilos = new Estilos(dataGridView1);
 
@@ -94,6 +107,8 @@ namespace FormularioClientes
                 fila.Cells[6].Value = DateTime.Now.AddDays(-i);
                 fila.Cells[7].Value = i % 3 == 0 ? "A" : i % 2 == 0 ? "B" : "C";
                 fila.Cells[8].Value = 1000 + i * 1.5m;
+                fila.Cells[9].Value = i % 2 == 0 ? "Hombre" : "Mujer";
+                fila.Cells[10].Value = i % 2 == 0 ? "Si" : "No";
 
                 dgv.Rows.Add(fila);
             }
@@ -102,8 +117,9 @@ namespace FormularioClientes
         
         private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            Clientes formClientes = new Clientes();
-            formClientes.ShowDialog();
+            DataGridViewCellCollection datosFila = dataGridView1.CurrentRow.Cells;
+            Clientes formClientes = new Clientes( ref datosFila );
+            formClientes.Show();
         }
     }
 }

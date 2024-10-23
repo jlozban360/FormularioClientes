@@ -37,7 +37,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 26);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(906, 527);
+            dataGridView1.Size = new Size(1204, 527);
             dataGridView1.TabIndex = 0;
             dataGridView1.MouseDoubleClick += dataGridView1_MouseDoubleClick;
             // 
@@ -45,7 +45,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(930, 565);
+            ClientSize = new Size(1228, 565);
             Controls.Add(dataGridView1);
             Name = "Form1";
             Text = "DataGridView Personalizado";
