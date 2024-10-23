@@ -39,6 +39,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(906, 527);
             dataGridView1.TabIndex = 0;
+            dataGridView1.MouseDoubleClick += dataGridView1_MouseDoubleClick;
             // 
             // Form1
             // 

@@ -59,6 +59,8 @@ namespace FormularioClientes
             estiloApellido2.ForeColor = Color.Purple;
             dataGridView.Columns["Apellido2"].DefaultCellStyle = estiloApellido2;
 
+            //dataGridView.Columns["Código"].DefaultCellStyle = estiloCodigo;
+
             DataGridViewCellStyle estiloLocalidad = new DataGridViewCellStyle();
             estiloLocalidad.BackColor = Color.LightYellow;
             estiloLocalidad.ForeColor = Color.DarkOrange;

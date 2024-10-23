@@ -36,9 +36,16 @@ namespace FormularioClientes
             apellido2Col.ValueType = typeof(string);
             dataGridView1.Columns.Add(apellido2Col);
 
+            DataGridViewTextBoxColumn codigoEdad = new DataGridViewTextBoxColumn();
+            codigoEdad.Name = "Edad";
+            codigoEdad.HeaderText = "Edad";
+            codigoEdad.ValueType = typeof(int);
+            codigoEdad.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns.Add(codigoEdad);
+
             DataGridViewTextBoxColumn localidadCol = new DataGridViewTextBoxColumn();
             localidadCol.Name = "Localidad";
-            localidadCol.HeaderText = "Localidad";
+            localidadCol.HeaderText = "Direccion";
             localidadCol.ValueType = typeof(string);
             dataGridView1.Columns.Add(localidadCol);
 
@@ -71,6 +78,7 @@ namespace FormularioClientes
         private void falseandoDatos(int nDatos)
         {
             DataGridView dgv = dataGridView1;
+            Random r = new Random( );
 
             for (int i = 0; i < nDatos; i++)
             {
@@ -81,13 +89,21 @@ namespace FormularioClientes
                 fila.Cells[1].Value = "Nombre " + i;
                 fila.Cells[2].Value = "Apellido1 " + i;
                 fila.Cells[3].Value = "Apellido2 " + i;
-                fila.Cells[4].Value = "Localidad " + i;
-                fila.Cells[5].Value = DateTime.Now.AddDays(-i);
-                fila.Cells[6].Value = i % 3 == 0 ? "A" : i % 2 == 0 ? "B" : "C";
-                fila.Cells[7].Value = 1000 + i * 1.5m;
+                fila.Cells[4].Value = r.Next(18, 80);
+                fila.Cells[5].Value = "Localidad " + i;
+                fila.Cells[6].Value = DateTime.Now.AddDays(-i);
+                fila.Cells[7].Value = i % 3 == 0 ? "A" : i % 2 == 0 ? "B" : "C";
+                fila.Cells[8].Value = 1000 + i * 1.5m;
 
                 dgv.Rows.Add(fila);
             }
+        }
+
+        
+        private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Clientes formClientes = new Clientes();
+            formClientes.ShowDialog();
         }
     }
 }
