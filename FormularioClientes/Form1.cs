@@ -90,7 +90,7 @@ namespace FormularioClientes
         private void falseandoDatos(int nDatos)
         {
             DataGridView dgv = dataGridView1;
-            Random r = new Random( );
+            Random r = new Random();
 
             for (int i = 0; i < nDatos; i++)
             {
@@ -101,23 +101,44 @@ namespace FormularioClientes
                 fila.Cells[1].Value = "Nombre " + i;
                 fila.Cells[2].Value = "Apellido1 " + i;
                 fila.Cells[3].Value = "Apellido2 " + i;
-                fila.Cells[4].Value = r.Next(18, 80);
+                fila.Cells[4].Value = r.Next(18, 80); //Edad
                 fila.Cells[5].Value = "Localidad " + i;
                 fila.Cells[6].Value = DateTime.Now.AddDays(-i);
                 fila.Cells[7].Value = i % 3 == 0 ? "A" : i % 2 == 0 ? "B" : "C";
-                fila.Cells[8].Value = 1000 + i * 1.5m;
+                fila.Cells[8].Value = r.Next(1, 3000);
                 fila.Cells[9].Value = i % 2 == 0 ? "Hombre" : "Mujer";
                 fila.Cells[10].Value = i % 2 == 0 ? "Si" : "No";
 
                 dgv.Rows.Add(fila);
             }
         }
-        
+
         private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            DataGridViewCellCollection datosFila = dataGridView1.CurrentRow.Cells;
-            Clientes formClientes = new Clientes( ref datosFila );
-            formClientes.Show();
+            if (dataGridView1.CurrentRow != null)
+            {
+                DataGridViewCellCollection datosFila = dataGridView1.CurrentRow.Cells;
+                Clientes formClientes = new Clientes(ref datosFila, ref dataGridView1, false); // Pasamos también el dataGridView
+                formClientes.ShowDialog(); // Mostrar como diálogo modal
+            }
         }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Clientes clientes = new Clientes(ref dataGridView1, true); // Pasamos el dataGridView para poder agregar una fila
+            clientes.ShowDialog(); // Mostrar como diálogo modal
+        }
+
+
+        //Este boton es para borrar la fila seleccionada, completalo
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index); // Eliminar la fila seleccionada
+            }
+        }
+
     }
 }

@@ -35,26 +35,31 @@
             textBoxApellido2 = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dateTimePickerFecha = new DateTimePicker();
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            numericUpDown1 = new NumericUpDown();
+            numericUpDownEdad = new NumericUpDown();
             label8 = new Label();
-            comboBox1 = new ComboBox();
-            checkBox1 = new CheckBox();
+            comboBoxTipoCliente = new ComboBox();
+            checkBoxActivo = new CheckBox();
             groupBox1 = new GroupBox();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
-            progressBar1 = new ProgressBar();
+            radioButtonMujer = new RadioButton();
+            radioButtonHombre = new RadioButton();
+            progressBarDinero = new ProgressBar();
             button1 = new Button();
             button2 = new Button();
-            listBox1 = new ListBox();
             button3 = new Button();
             textBoxDireccion = new TextBox();
-            maskedTextBox1 = new MaskedTextBox();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            maskedTextBoxTelefono = new MaskedTextBox();
+            pictureBoxhappy = new PictureBox();
+            pictureBoxSad = new PictureBox();
+            pictureBoxSuspicious = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownEdad).BeginInit();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxhappy).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSad).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSuspicious).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -124,13 +129,13 @@
             label4.TabIndex = 7;
             label4.Text = "Dirección:";
             // 
-            // dateTimePicker1
+            // dateTimePickerFecha
             // 
-            dateTimePicker1.Font = new Font("Segoe UI", 12F);
-            dateTimePicker1.Location = new Point(182, 220);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(208, 29);
-            dateTimePicker1.TabIndex = 9;
+            dateTimePickerFecha.Font = new Font("Segoe UI", 12F);
+            dateTimePickerFecha.Location = new Point(182, 220);
+            dateTimePickerFecha.Name = "dateTimePickerFecha";
+            dateTimePickerFecha.Size = new Size(208, 29);
+            dateTimePickerFecha.TabIndex = 9;
             // 
             // label5
             // 
@@ -138,9 +143,9 @@
             label5.Font = new Font("Segoe UI", 12F);
             label5.Location = new Point(31, 220);
             label5.Name = "label5";
-            label5.Size = new Size(134, 21);
+            label5.Size = new Size(82, 21);
             label5.TabIndex = 10;
-            label5.Text = "Fecha nacimiento:";
+            label5.Text = "Fecha alta:";
             // 
             // label6
             // 
@@ -162,13 +167,13 @@
             label7.TabIndex = 13;
             label7.Text = "Edad:";
             // 
-            // numericUpDown1
+            // numericUpDownEdad
             // 
-            numericUpDown1.Font = new Font("Segoe UI", 12F);
-            numericUpDown1.Location = new Point(182, 260);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 29);
-            numericUpDown1.TabIndex = 14;
+            numericUpDownEdad.Font = new Font("Segoe UI", 12F);
+            numericUpDownEdad.Location = new Point(182, 260);
+            numericUpDownEdad.Name = "numericUpDownEdad";
+            numericUpDownEdad.Size = new Size(120, 29);
+            numericUpDownEdad.TabIndex = 14;
             // 
             // label8
             // 
@@ -180,30 +185,30 @@
             label8.TabIndex = 15;
             label8.Text = "Tipo cliente:";
             // 
-            // comboBox1
+            // comboBoxTipoCliente
             // 
-            comboBox1.Font = new Font("Segoe UI", 12F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "A", "B", "C" });
-            comboBox1.Location = new Point(181, 295);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 29);
-            comboBox1.TabIndex = 16;
+            comboBoxTipoCliente.Font = new Font("Segoe UI", 12F);
+            comboBoxTipoCliente.FormattingEnabled = true;
+            comboBoxTipoCliente.Items.AddRange(new object[] { "A", "B", "C" });
+            comboBoxTipoCliente.Location = new Point(181, 295);
+            comboBoxTipoCliente.Name = "comboBoxTipoCliente";
+            comboBoxTipoCliente.Size = new Size(121, 29);
+            comboBoxTipoCliente.TabIndex = 16;
             // 
-            // checkBox1
+            // checkBoxActivo
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(182, 330);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(60, 19);
-            checkBox1.TabIndex = 17;
-            checkBox1.Text = "Activo";
-            checkBox1.UseVisualStyleBackColor = true;
+            checkBoxActivo.AutoSize = true;
+            checkBoxActivo.Location = new Point(182, 330);
+            checkBoxActivo.Name = "checkBoxActivo";
+            checkBoxActivo.Size = new Size(60, 19);
+            checkBoxActivo.TabIndex = 17;
+            checkBoxActivo.Text = "Activo";
+            checkBoxActivo.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Controls.Add(radioButton1);
+            groupBox1.Controls.Add(radioButtonMujer);
+            groupBox1.Controls.Add(radioButtonHombre);
             groupBox1.Location = new Point(109, 364);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(247, 60);
@@ -211,34 +216,34 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Genero";
             // 
-            // radioButton2
+            // radioButtonMujer
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(137, 22);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(56, 19);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Mujer";
-            radioButton2.UseVisualStyleBackColor = true;
+            radioButtonMujer.AutoSize = true;
+            radioButtonMujer.Location = new Point(137, 22);
+            radioButtonMujer.Name = "radioButtonMujer";
+            radioButtonMujer.Size = new Size(56, 19);
+            radioButtonMujer.TabIndex = 1;
+            radioButtonMujer.TabStop = true;
+            radioButtonMujer.Text = "Mujer";
+            radioButtonMujer.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioButtonHombre
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(21, 22);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(69, 19);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Hombre";
-            radioButton1.UseVisualStyleBackColor = true;
+            radioButtonHombre.AutoSize = true;
+            radioButtonHombre.Location = new Point(21, 22);
+            radioButtonHombre.Name = "radioButtonHombre";
+            radioButtonHombre.Size = new Size(69, 19);
+            radioButtonHombre.TabIndex = 0;
+            radioButtonHombre.TabStop = true;
+            radioButtonHombre.Text = "Hombre";
+            radioButtonHombre.UseVisualStyleBackColor = true;
             // 
-            // progressBar1
+            // progressBarDinero
             // 
-            progressBar1.Location = new Point(31, 449);
-            progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(396, 23);
-            progressBar1.TabIndex = 19;
+            progressBarDinero.Location = new Point(31, 449);
+            progressBarDinero.Name = "progressBarDinero";
+            progressBarDinero.Size = new Size(396, 23);
+            progressBarDinero.TabIndex = 19;
             // 
             // button1
             // 
@@ -246,8 +251,9 @@
             button1.Name = "button1";
             button1.Size = new Size(178, 48);
             button1.TabIndex = 20;
-            button1.Text = "Editar";
+            button1.Text = "Guardar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += buttonSave_Click;
             // 
             // button2
             // 
@@ -257,25 +263,17 @@
             button2.TabIndex = 21;
             button2.Text = "Cancelar";
             button2.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Items.AddRange(new object[] { "Cliente 1", "Cliente 2", "Cliente 3" });
-            listBox1.Location = new Point(31, 504);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(178, 49);
-            listBox1.TabIndex = 22;
+            button2.Click += buttonCancel_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(246, 504);
+            button3.Location = new Point(31, 504);
             button3.Name = "button3";
-            button3.Size = new Size(172, 49);
+            button3.Size = new Size(178, 49);
             button3.TabIndex = 23;
             button3.Text = "Limpiar formulario";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += buttonClean_Click;
             // 
             // textBoxDireccion
             // 
@@ -286,38 +284,69 @@
             textBoxDireccion.Size = new Size(302, 29);
             textBoxDireccion.TabIndex = 24;
             // 
-            // maskedTextBox1
+            // maskedTextBoxTelefono
             // 
-            maskedTextBox1.BorderStyle = BorderStyle.FixedSingle;
-            maskedTextBox1.Font = new Font("Segoe UI", 12F);
-            maskedTextBox1.Location = new Point(141, 171);
-            maskedTextBox1.Mask = "999999999";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(161, 29);
-            maskedTextBox1.TabIndex = 25;
-            maskedTextBox1.ValidatingType = typeof(int);
+            maskedTextBoxTelefono.BorderStyle = BorderStyle.FixedSingle;
+            maskedTextBoxTelefono.Font = new Font("Segoe UI", 12F);
+            maskedTextBoxTelefono.Location = new Point(141, 171);
+            maskedTextBoxTelefono.Mask = "999999999";
+            maskedTextBoxTelefono.Name = "maskedTextBoxTelefono";
+            maskedTextBoxTelefono.Size = new Size(161, 29);
+            maskedTextBoxTelefono.TabIndex = 25;
+            maskedTextBoxTelefono.ValidatingType = typeof(int);
+            // 
+            // pictureBoxhappy
+            // 
+            pictureBoxhappy.Image = Properties.Resources.smiley2;
+            pictureBoxhappy.Location = new Point(289, 495);
+            pictureBoxhappy.MaximumSize = new Size(100, 100);
+            pictureBoxhappy.Name = "pictureBoxhappy";
+            pictureBoxhappy.Size = new Size(67, 75);
+            pictureBoxhappy.TabIndex = 26;
+            pictureBoxhappy.TabStop = false;
+            pictureBoxhappy.Visible = false;
+            // 
+            // pictureBoxSad
+            // 
+            pictureBoxSad.Image = Properties.Resources.smileysad;
+            pictureBoxSad.Location = new Point(289, 495);
+            pictureBoxSad.Name = "pictureBoxSad";
+            pictureBoxSad.Size = new Size(84, 75);
+            pictureBoxSad.TabIndex = 27;
+            pictureBoxSad.TabStop = false;
+            // 
+            // pictureBoxSuspicious
+            // 
+            pictureBoxSuspicious.Image = Properties.Resources.rb_81606;
+            pictureBoxSuspicious.Location = new Point(289, 482);
+            pictureBoxSuspicious.Name = "pictureBoxSuspicious";
+            pictureBoxSuspicious.Size = new Size(101, 88);
+            pictureBoxSuspicious.TabIndex = 28;
+            pictureBoxSuspicious.TabStop = false;
             // 
             // Clientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(485, 663);
-            Controls.Add(maskedTextBox1);
+            Controls.Add(pictureBoxSuspicious);
+            Controls.Add(pictureBoxSad);
+            Controls.Add(pictureBoxhappy);
+            Controls.Add(maskedTextBoxTelefono);
             Controls.Add(textBoxDireccion);
             Controls.Add(button3);
-            Controls.Add(listBox1);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(progressBar1);
+            Controls.Add(progressBarDinero);
             Controls.Add(groupBox1);
-            Controls.Add(checkBox1);
-            Controls.Add(comboBox1);
+            Controls.Add(checkBoxActivo);
+            Controls.Add(comboBoxTipoCliente);
             Controls.Add(label8);
-            Controls.Add(numericUpDown1);
+            Controls.Add(numericUpDownEdad);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dateTimePickerFecha);
             Controls.Add(label4);
             Controls.Add(textBoxApellido2);
             Controls.Add(label3);
@@ -327,9 +356,12 @@
             Controls.Add(label1);
             Name = "Clientes";
             Text = "Clientes";
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownEdad).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxhappy).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSad).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSuspicious).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -343,23 +375,25 @@
         private TextBox textBoxApellido2;
         private Label label3;
         private Label label4;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePickerFecha;
         private Label label5;
         private Label label6;
         private Label label7;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown numericUpDownEdad;
         private Label label8;
-        private ComboBox comboBox1;
-        private CheckBox checkBox1;
+        private ComboBox comboBoxTipoCliente;
+        private CheckBox checkBoxActivo;
         private GroupBox groupBox1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
-        private ProgressBar progressBar1;
+        private RadioButton radioButtonMujer;
+        private RadioButton radioButtonHombre;
+        private ProgressBar progressBarDinero;
         private Button button1;
         private Button button2;
-        private ListBox listBox1;
         private Button button3;
         private TextBox textBoxDireccion;
-        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox maskedTextBoxTelefono;
+        private PictureBox pictureBoxhappy;
+        private PictureBox pictureBoxSad;
+        private PictureBox pictureBoxSuspicious;
     }
 }
